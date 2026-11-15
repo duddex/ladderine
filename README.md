@@ -180,9 +180,10 @@ cutoff/emphasis/drive combination.
 
 ## Relationship to Felucca
 
-There are two repositories in the parent folder:
+Felucca and Felucca-Engines are separate repositories, not part of this one:
 
-- **Felucca** — GPL-3.0-only firmware for the M-VAVE FM-1 hardware synthesizer.
+- **Felucca** — GPL-3.0-only firmware for the M-VAVE FM-1 hardware synthesizer:
+  <https://github.com/hugelton/Felucca>.
 - **Felucca-Engines** — the MIT-licensed DSP subset used by Felucca: six
   engines (ANALOG, LOFI, TRIO, WHEEL, NOISE, PHASE), a shared fixed-point DSP
   file and a table generator. It is built for a 32-bit microcontroller, renders
