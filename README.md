@@ -45,22 +45,19 @@ The plugin identifies itself as manufacturer **Ddex**, plugin code **Lddr**
 - **Real-time safe**: no allocation and no locks in the audio path. One
   monophonic voice; a full render is a few percent of one core.
 
-## Build
+## Building
 
-Requirements: CMake 3.22+, a C++20 compiler, and JUCE 9.0.5, which is the
-fetched at configure time with CMake FetchContent (the first configure needs
-network access).
-
-### Windows (Visual Studio 2026)
+Requirements: CMake 3.22 or newer and a C++20 compiler (developed with Visual
+Studio 2026 on Windows). JUCE 9.0.5 is fetched with CMake FetchContent, so the
+first configure needs network access.
 
 ```powershell
 git clone https://github.com/duddex/ladderine.git
 cd ladderine
-cmake -S . -B build -G "Visual Studio 18 2026" -A x64
-cmake --build build --config Release --target Ladderine_VST3 Ladderine_Standalone
+cmake -S . -B build
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
 ```
-
-With Visual Studio 2022 use `-G "Visual Studio 17 2022"`.
 
 The binaries are written to:
 
@@ -72,19 +69,17 @@ build/Ladderine_artefacts/Release/Standalone/Ladderine.exe
 Copy the `Ladderine.vst3` bundle to `C:\Program Files\Common Files\VST3` (needs
 administrator rights). The standalone needs no installation.
 
-Run the DSP tests with:
+The DSP tests run under `ctest`; see [Tests](#tests).
 
-```powershell
-cmake --build build --config Release --target LadderineDspTests
-ctest --test-dir build -C Release
-```
-
-### macOS / Linux
-
-The same CMake project works. On macOS add `AU` to `FORMATS` in
+On macOS and Linux the same CMake project works. On macOS add `AU` to `FORMATS` in
 `CMakeLists.txt` if you want an Audio Unit, and use the Xcode or Ninja
 generator; on Linux use Ninja/Make and install the resulting VST3 into
 `~/.vst3`.
+
+## Releases
+
+GitHub Actions builds and tests every push on Windows. Pushing a `v*` tag creates a release with a
+zip of the VST3, the standalone app and the licence files.
 
 ## The panel
 
@@ -141,7 +136,6 @@ synthesizer; it is an instrument in that tradition.
 Source layout:
 
 ```
-(JUCE 9.0.5 is fetched by CMake FetchContent)
 src/
   PluginProcessor.*      JUCE processor, parameters, MIDI, state, presets
   PluginEditor.*         window, panel layout, painting
@@ -215,6 +209,7 @@ must make the corresponding source available under the AGPL.
 
 The factory presets and the on-screen keyboard design are original.
 No Moog samples, trademarks, or code are included.
+
 ## Credits
 
 Designed and built as an independent companion to the Felucca project. Thanks
