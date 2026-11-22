@@ -5,6 +5,20 @@
 
 namespace ladderine
 {
+namespace
+{
+// Reports exactly 0 or 1 from getValue(). The state tree stores the snapped value,
+// so an unsnapped value (such as 0.53 set by a host or by pluginval) would
+// otherwise never be reset when the state is restored.
+class SnappingBoolParameter : public juce::AudioParameterBool
+{
+public:
+    using juce::AudioParameterBool::AudioParameterBool;
+
+    float getValue() const override { return get() ? 1.0f : 0.0f; }
+};
+} // namespace
+
 juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 {
     using namespace params;
@@ -33,7 +47,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
 
     auto addBool = [&list] (const char* id, const char* name, bool def)
     {
-        list.push_back (std::make_unique<juce::AudioParameterBool> (
+        list.push_back (std::make_unique<SnappingBoolParameter> (
             juce::ParameterID { id, 1 }, name, def));
     };
 
