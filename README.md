@@ -205,16 +205,16 @@ not affiliated with or endorsed by Moog or Hügelton.
 
 ## Licence
 
-The original code in this project is yours to license as you choose. It uses
-**JUCE 8**, which is dual-licensed under AGPLv3 and a commercial licence;
-distributing a binary built with the AGPL option requires releasing the
-corresponding source under the AGPL, while a JUCE commercial licence removes
-that requirement. JUCE is included as the `libs/JUCE` git submodule and built
-from source.
+Ladderine is free software, licensed under the GNU Affero General Public
+License, version 3 or (at your option) any later version. See
+[`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
+
+It uses **JUCE 8** under its AGPLv3 option. JUCE is included as the
+`libs/JUCE` git submodule and built from source. Anyone distributing a binary
+must make the corresponding source available under the AGPL.
 
 The factory presets and the on-screen keyboard design are original.
 No Moog samples, trademarks, or code are included.
-
 ## Credits
 
 Designed and built as an independent companion to the Felucca project. Thanks
