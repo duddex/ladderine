@@ -212,7 +212,10 @@ No Moog samples, trademarks, or code are included.
 
 ## Credits
 
-Designed and built as an independent companion to the Felucca project. Thanks
+Designed and developed by [duddex](https://github.com/duddex) with the help of a
+large language model (LLM).
+
+Ladderine is an independent companion to the Felucca project. Thanks
 to Leo Kuroshita / Hügelton Instruments for Felucca and Felucca-Engines, which
 inspired the voice architecture and the panel.
 
