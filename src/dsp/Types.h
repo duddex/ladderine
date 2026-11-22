@@ -1,3 +1,6 @@
+// Copyright (C) 2026 duddex
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 /*
     Ladderine - a Model D inspired monophonic synthesizer.
     DSP core types. Deliberately free of JUCE: the same code builds as a

@@ -1,3 +1,6 @@
+// Copyright (C) 2026 duddex
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 /*
     Ladderine - zero-delay-feedback 4-pole ladder low-pass.
 
