@@ -8,18 +8,18 @@ Copyright (C) 2026 duddex
 
 ## JUCE
 
-Ladderine is built with the [JUCE framework](https://juce.com), included as a
-git submodule in `libs/JUCE`, and uses it under the **GNU Affero General Public
-License v3.0** (one of JUCE's two licence options). See `libs/JUCE/LICENSE.md`.
+Ladderine is built with the [JUCE framework](https://juce.com), fetched with
+CMake FetchContent (tag 8.0.9), and uses it under the **GNU Affero General Public
+License v3.0** (one of JUCE's two licence options). See `LICENSE.md` in the JUCE sources.
 
     Copyright (c) Raw Material Software Limited
 
-JUCE bundles more third-party software, listed in `libs/JUCE/JUCE.spdx.json`.
+JUCE bundles more third-party software, listed in `JUCE.spdx.json` in the JUCE sources.
 
 ## VST3 SDK
 
 The VST3 plugin is built with the Steinberg VST3 SDK, which JUCE bundles and
-which is licensed under the MIT licence. See the JUCE submodule for its
+which is licensed under the MIT licence. See the JUCE sources for its
 licence text.
 
 VST is a registered trademark of Steinberg Media Technologies GmbH.

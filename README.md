@@ -48,13 +48,13 @@ The plugin identifies itself as manufacturer **Ddex**, plugin code **Lddr**
 ## Build
 
 Requirements: CMake 3.22+, a C++20 compiler, and JUCE 8.0.9, which is the
-`libs/JUCE` git submodule. Clone the repository with submodules, or run
-`git submodule update --init --recursive` once.
+fetched at configure time with CMake FetchContent (the first configure needs
+network access).
 
 ### Windows (Visual Studio 2026)
 
 ```powershell
-git clone --recurse-submodules https://github.com/duddex/ladderine.git
+git clone https://github.com/duddex/ladderine.git
 cd ladderine
 cmake -S . -B build -G "Visual Studio 18 2026" -A x64
 cmake --build build --config Release --target Ladderine_VST3 Ladderine_Standalone
@@ -141,7 +141,7 @@ synthesizer; it is an instrument in that tradition.
 Source layout:
 
 ```
-libs/JUCE               JUCE 8.0.9 (git submodule)
+(JUCE 8.0.9 is fetched by CMake FetchContent)
 src/
   PluginProcessor.*      JUCE processor, parameters, MIDI, state, presets
   PluginEditor.*         window, panel layout, painting
@@ -209,8 +209,8 @@ Ladderine is free software, licensed under the GNU Affero General Public
 License, version 3 or (at your option) any later version. See
 [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
 
-It uses **JUCE 8** under its AGPLv3 option. JUCE is included as the
-`libs/JUCE` git submodule and built from source. Anyone distributing a binary
+It uses **JUCE 8** under its AGPLv3 option. JUCE is fetched with
+CMake FetchContent and built from source. Anyone distributing a binary
 must make the corresponding source available under the AGPL.
 
 The factory presets and the on-screen keyboard design are original.
