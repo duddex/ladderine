@@ -9,7 +9,7 @@ Copyright (C) 2026 duddex
 ## JUCE
 
 Ladderine is built with the [JUCE framework](https://juce.com), fetched with
-CMake FetchContent (tag 8.0.9), and uses it under the **GNU Affero General Public
+CMake FetchContent (tag 9.0.5), and uses it under the **GNU Affero General Public
 License v3.0** (one of JUCE's two licence options). See `LICENSE.md` in the JUCE sources.
 
     Copyright (c) Raw Material Software Limited

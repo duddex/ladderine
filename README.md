@@ -47,7 +47,7 @@ The plugin identifies itself as manufacturer **Ddex**, plugin code **Lddr**
 
 ## Build
 
-Requirements: CMake 3.22+, a C++20 compiler, and JUCE 8.0.9, which is the
+Requirements: CMake 3.22+, a C++20 compiler, and JUCE 9.0.5, which is the
 fetched at configure time with CMake FetchContent (the first configure needs
 network access).
 
@@ -141,7 +141,7 @@ synthesizer; it is an instrument in that tradition.
 Source layout:
 
 ```
-(JUCE 8.0.9 is fetched by CMake FetchContent)
+(JUCE 9.0.5 is fetched by CMake FetchContent)
 src/
   PluginProcessor.*      JUCE processor, parameters, MIDI, state, presets
   PluginEditor.*         window, panel layout, painting
@@ -209,7 +209,7 @@ Ladderine is free software, licensed under the GNU Affero General Public
 License, version 3 or (at your option) any later version. See
 [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
 
-It uses **JUCE 8** under its AGPLv3 option. JUCE is fetched with
+It uses **JUCE 9** under its AGPLv3 option. JUCE is fetched with
 CMake FetchContent and built from source. Anyone distributing a binary
 must make the corresponding source available under the AGPL.
 
